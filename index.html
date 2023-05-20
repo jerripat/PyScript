@@ -1,12 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>Pyscript with Functions and Classes</title>
+    <!--<py-repl id="my-repl" auto-generate=true></py-repl>
+    <py-env>
+        - numpy
+        - matplotlib
+        <!--- paths:
+        - /example.py
+    </py-env>
+    -<py-config>
+        autoclose_loader: true
+        runtimes:
+        - src: "https://cdn.jsdeliver.net/pyodide/v0.20.0/full/pyodide.js"
+        - name pyodide-0.20
+        lang=python
+    </py-config>-->
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <!--<py-env>
+        - paths:
+            - /example.py
+    </py-env>-->
 </head>
+
 <body>
-    
+    <!-- <h1>Lucky Number Game</h1>
+    <b>Jerri's lucky number is: <label id="lucky"></label></b>
+    <py-script>
+        from example import generate_random_number
+        pyscript.write('lucky', generate_random_number())
+    </py-script>
+    <py-script src="helloworld.py"></py-script>
+    for i in range(1,10):
+            print(f"loop number: {i}")-->
+
+    PyScript Functions and Classes<br>
+    <py-script>
+
+    class Person:
+        def __init__(self, first_name, last_name):
+            self.firstname = first_name
+            self.lastname = last_name
+
+    class Student(Person):
+        def __init__(self, first_name,last_name, university):
+            self.university = university
+            super().__init__(first_name,last_name)
+
+        def __str__(self):
+            return "Student: %s %s University: %s" % (self.firstname, self.lastname, self.university)
+
+        def create_students():
+            stud1 = Student("jerri","Patterson", "MIT")
+            stud2 = Student("Billi","Pson", "MIT")
+            stud3 = Student("Cathi","Warren", "SUNY")
+
+            return [stud1, stud2, stud3]
+
+        def get_students_by_university(students, university):
+            return [stud for stud in students if stud.university == university]
+
+        def print_students(students):
+            for student in students:
+                print_students(student)
+
+        def main():
+            students = create_students()
+            mit_students = get_students_by_university(students, "MIT")
+
+            print("All Students:")
+            print_students(students)
+
+            print("MIT Students:")
+            print_students(mit_students)
+
+        main()
+
+    </py-script>
 </body>
+
 </html>

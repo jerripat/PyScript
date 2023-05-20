@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write to tags</title>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+<body>
+    
+    <div>
+
+        <p id="change_me">Click to Reveal</p>
+    </div>
+    <py-script>
+     
+import pyodide
+
+def on_click(e):
+    e.target.innerHTML = "Pyscript is awesome!!"   
+change_me_element = document.getElementById('change_me')
+change_me_element.addEventListener('click', pyodide.create_proxy(on_click))
+
+    
+    </py-script>
+</body>
+</html>

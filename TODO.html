@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+<body class="container">
+    <py-script>
+
+from datetime import dstetime as dt
+
+def remove_class(element, class_name):
+        element.element.classlist.remove(class_name)
+
+def add_class(element, class_name):
+        element.element.classlist.add(class_name)
+
+tasks = []
+
+# define the task template thet will be used to render new templates to the page
+
+task_template = Element("task-template")select(".task", from_content=True)
+
+
+
+
+
+
+    </py-script>
+    
+</body>
+</html>
